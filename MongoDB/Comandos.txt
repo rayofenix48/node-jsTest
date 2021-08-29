@@ -1,0 +1,51 @@
+db.stats()          Estadisticas de la base de datos     
+use DB_Name         Crear una base de datos
+show dbs            Mostrar Base de datos
+db                  Sirve para ver que Base estoy actualmente
+db.dropDatabase()   Borra la base de datos
+db.createCollection(Name,Options)   Crea una coleccion de datos
+db.createCollection(Name,{capped : true, size : sizeLimit , max : documentLimit })      Crea una colección limitada 
+db.geekFlareCollection.drop()   Borra una coleccion de datos
+
+Para insertar un registro insert() or insertOne() se puede utilizar el método.
+
+Sintaxis: collectionName.insertOne({document})
+
+Ejemplo:
+
+> db.geekFlareCollection.insertOne( {
+ code: "P123", Qty: 200, status: "Active"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5ed309725429283aee2e134d")
+}
+Insertar varios registros
+Para insertar muchos registros, se pasará una lista de registros a insert() or insertMany() método.
+
+Sintaxis:
+
+collectionName.insertMany([{document1},{document2},{ document3}….{ documentn}])
+
+Ejemplo:
+
+db.geekFlareCollection.insertMany([
+... { code: "P1", Qty: 100, status: "Active"},
+... { code: "P2", Qty: 200, status: "Active"},
+... { code: "P3", Qty: 0, status: "Dective"}
+... ]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5edf7b4e18b2c26b9dfe8cac"),
+                ObjectId("5edf7b4e18b2c26b9dfe8cad"),
+                ObjectId("5edf7b4e18b2c26b9dfe8cae")
+        ]
+}
+> db.geekFlareCollection.find()
+{ "_id" : ObjectId("5edf546fdfa12b33b7cb75b8"), "product" : "bottles", "Qty" : 100 }
+{ "_id" : ObjectId("5edf546fdfa12b33b7cb75b9"), "product" : "bread", "Qty" : 20 }
+{ "_id" : ObjectId("5edf546fdfa12b33b7cb75ba"), "product" : "yogurt", "Qty" : 30 }
+{ "_id" : ObjectId("5edf7b4e18b2c26b9dfe8cac"), "code" : "P1", "Qty" : 100, "status" : "Active" }
+{ "_id" : ObjectId("5edf7b4e18b2c26b9dfe8cad"), "code" : "P2", "Qty" : 200, "status" : "Active" }
+{ "_id" : ObjectId("5edf7b4e18b2c26b9dfe8cae"), "code" : "P3", "Qty" : 0, "status" : "Dective" }
+>
