@@ -1,0 +1,33 @@
+{
+  "name": "proyectJs-mongoDB",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "__comment": "Encripta los password",
+    "bcryptjs": "^2.4.3",
+    "__comment2": "Mandar alertas en muchas vistas",
+    "connect-flash": "^0.1.1",
+    "__comment3": "Modulos de servidor",
+    "express": "^4.17.1",
+    "__comment4": "Plantillas para crear un html mejor formado ",
+    "express-handlebars": "^5.3.3",
+    "__comment5": "Sessiones para los usuarios",
+    "express-session": "^1.17.2",
+    "__comment6": "Metodos para envio",
+    "method-override": "^3.0.0",
+    "__comment7": "Sirve para conectar la bd mongoDB con nodejs",
+    "mongoose": "^6.0.2",
+    "__comment8": "Sirve para autenticar a los usuarios",
+    "passport": "^0.4.1",
+    "__comment9": "Autenticación",
+    "passport-local": "^1.0.0"
+  }
+}

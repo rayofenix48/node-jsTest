@@ -1,3 +1,7 @@
+#npn init   Nos va a sevir para validar dependencias y crear el .json que es el archivo de configuración
 #prueba.txt
 #nodejs-curso/
 #MongoDB/
+Node_modules/
+nodejs-curso/package-lock.json
+nodejs-notes-app/

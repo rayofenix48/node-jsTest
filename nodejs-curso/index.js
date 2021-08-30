@@ -1,25 +1,40 @@
-//const os = require('os');            Permite la interacción con la información de el SO.
-const fs = require('fs');
-fs.writeFile('texto.txt','linea uno',function(err){
-    if (err){
-        console.log(err);
-    }
-    console.log('Archivo Creado');
-});
+/*
+const http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/html' }); // Devolvera que typo de dato estamos regresando y una respuesta 200 de conexion correcta
+    res.write('<h1>Hola a todos los quiero</h1>\n');
+    res.end();
+}).listen(2000);
 
-console.log('Ultima Linea de Código');
+La otra opción es meterlo en una constante
 
-//const users = query('select * from users');
+const handleServer = function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/html' }); // Devolvera que typo de dato estamos regresando y una respuesta 200 de conexion correcta
+    res.write('<h1>Hola a todos los quiero</h1>\n');
+    res.end();
+}
 
-/*query('select * from tabla', function(err){
-    if (err) return console.log(err);
-}); */
+http.createServer(handleServer).listen(3000);
+--------------------------------------------------------------------------
+Se puede mejorar aún
+const server = http.createServer(handleServer)
 
-fs.readFile('./texto.txt',function(err, data){
-    if (err){
-        console.log(err);
-    }
-    console.log(data.toString()); //data Muestra los datos en crudo por lo tanto se tiene que convertir en to_string
+server.listen(3000, function(){ 
+    console.log('Server on Port 3000')
+})
 
 
-});
+Existe otra funcionalidad con los modulos de express que es cómo lo dejamos
+*/
+const express = require('express');
+const colors = require('colors');
+const server = express();
+
+server.get('/', function(req, res){
+    res.send('<h1>Hola Mundo</h1>');
+    res.end();
+})
+
+server.listen(3000, function(){ 
+    console.log('Server on Port 3000'.yellow);
+})

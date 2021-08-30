@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-curso",
+  "version": "1.0.0",
+  "description": "Proyecto de prueb",
+  "main": "index.js",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "__comment": "esta parte nos sirve para iniciar con npm start y ejecuta el.json para resolver dependencias y ejecutar",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "proyecto"
+  ],
+  "author": "Victor Celis",
+  "license": "ISC"
+}
