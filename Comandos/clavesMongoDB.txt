@@ -6,6 +6,7 @@ db.dropDatabase()   Borra la base de datos
 db.createCollection(Name,Options)   Crea una coleccion de datos
 db.createCollection(Name,{capped : true, size : sizeLimit , max : documentLimit })      Crea una colección limitada 
 db.geekFlareCollection.drop()   Borra una coleccion de datos
+collectionName.update({KeyToUpdate},{Set Command})
 
 Para insertar un registro insert() or insertOne() se puede utilizar el método.
 
@@ -19,6 +20,7 @@ Ejemplo:
         "acknowledged" : true,
         "insertedId" : ObjectId("5ed309725429283aee2e134d")
 }
+
 Insertar varios registros
 Para insertar muchos registros, se pasará una lista de registros a insert() or insertMany() método.
 
@@ -41,11 +43,12 @@ db.geekFlareCollection.insertMany([
                 ObjectId("5edf7b4e18b2c26b9dfe8cae")
         ]
 }
+
 > db.geekFlareCollection.find()
 { "_id" : ObjectId("5edf546fdfa12b33b7cb75b8"), "product" : "bottles", "Qty" : 100 }
 { "_id" : ObjectId("5edf546fdfa12b33b7cb75b9"), "product" : "bread", "Qty" : 20 }
-{ "_id" : ObjectId("5edf546fdfa12b33b7cb75ba"), "product" : "yogurt", "Qty" : 30 }
-{ "_id" : ObjectId("5edf7b4e18b2c26b9dfe8cac"), "code" : "P1", "Qty" : 100, "status" : "Active" }
-{ "_id" : ObjectId("5edf7b4e18b2c26b9dfe8cad"), "code" : "P2", "Qty" : 200, "status" : "Active" }
-{ "_id" : ObjectId("5edf7b4e18b2c26b9dfe8cae"), "code" : "P3", "Qty" : 0, "status" : "Dective" }
->
+
+Ejemplo Update
+db.geekFlareCollection.update({"product" : "bottles"},{$set : {"Qty": 10}}  )
+
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
