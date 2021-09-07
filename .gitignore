@@ -2,6 +2,6 @@
 #prueba.txt
 #nodejs-curso/
 #MongoDB/
-Node_modules/
+*Node_modules/
 nodejs-curso/package-lock.json
 nodejs-notes-app/
