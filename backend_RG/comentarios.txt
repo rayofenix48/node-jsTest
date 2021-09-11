@@ -55,3 +55,13 @@ mutation{
     name
   }
 }
+
+La otra opción es desde el shell conectandonos desde la terminal 
+mongo "mongodb+srv://cluster0.v8czf.mongodb.net/myFirstDatabase" --username crashvic
+db.books.insertMany([
+  { _id: 4, name: 'The Fellowship of the Ring', authorId: 2 },
+	{ _id: 5, name: 'The Two Towers', authorId: 2 },
+	{ _id: 6, name: 'The Return of the King', authorId: 2 },
+	{ _id: 7, name: 'The Way of Shadows', authorId: 3 },
+	{ _id: 8, name: 'Beyond the Shadows', authorId: 3 }
+])

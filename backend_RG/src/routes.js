@@ -27,9 +27,12 @@ app.use('/graphql', graphqlHTTP({
     }
 }));
 
+/* Esta es la última parte con el que se podrían hacer el post y el get en otra ruta
+para este caso sería localhost:3000/add_authors y es el intermediario con el frontEnd
+
  //-----------------------------------------------------------Agregar autores
 app.post("/add_authors", async (req, res) => {
-    const author = new authorsSchema(req.body);
+    const author = new authors(req.body);
 
     try {
       await author.save();
@@ -42,7 +45,7 @@ app.post("/add_authors", async (req, res) => {
  //-----------------------------------------------------------Obtener autores
 
  app.get("/authors", async (req, res) => {
-    const author = await r.authors.find({});
+    const author = await authors.find({});
   
     try {
       res.send(author);
@@ -50,7 +53,7 @@ app.post("/add_authors", async (req, res) => {
       res.status(500).send(error);
     }
   });
-
+*/
   module.exports=app;
 
 
