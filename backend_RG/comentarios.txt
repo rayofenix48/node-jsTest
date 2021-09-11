@@ -1,3 +1,17 @@
+Comentarios importantes leer hasta el final
+
+Para que funcione el proyecto hicimos uso de un compilador llamado babel
+(Nos sirve para ejecutar comandos más recientes de Javascript) cuando se inicia el proyecto hicimos
+un script sencillo para instalar dependencias y meter el archivo .babelrc eso lo hace el mismo script
+
+déspues se modifica el package.json y se le agrega en la parte de scripts
+"start": "nodemon src/index.js --exec babel-node",
+
+Esto se ocupo para no tener que estar reiniciando el servidor a cada rato. Cuando guardas nodemon actualiza
+automaticamente el servidor y compila el nuevo código junto con babel-node
+
+Finalmente se ejecuta npm start y comienza la ejecución del servidor
+
 ***************************************Inserciones:********************************
 mutation{
 	addAuthor(_id:1,
