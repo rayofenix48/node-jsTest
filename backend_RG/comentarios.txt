@@ -1,4 +1,4 @@
-Comentarios importantes leer hasta el final :)
+Comentarios importantes leer hasta el final :) ;)
 
 Para que funcione el proyecto hicimos uso de un compilador llamado babel
 (Nos sirve para ejecutar comandos más recientes de Javascript) cuando se inicia el proyecto hicimos
