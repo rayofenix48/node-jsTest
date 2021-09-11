@@ -109,4 +109,16 @@ mutation{
   }
 }
 
+Otra forma de poner esquemas es 
+export const schema = new GraphQLSchema({
+  query: new GraphQLObjectType({
+    name: 'Query',
+    fields: () => ({
+      hello: {
+        type: GraphQLString,
+        resolve: () => 'Hello world!'
+      }
+    })
+  })
+});
 */
