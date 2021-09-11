@@ -22,7 +22,7 @@ const BookType = new GraphQLObjectType({
     author: {
       type: AuthorType,
       resolve: (book) => {
-        return authors.find(author => author.id === book.authorId)
+        return authors.find(author => author._id === book.authorId)
       }
     }
   })
@@ -53,7 +53,7 @@ export const RootQueryType = new GraphQLObjectType({
       args: {
         _id: { type: GraphQLInt }
       },
-      resolve: (parent, args) => books.find(book => book.id === args.id)
+      resolve: (parent, args) => books.find(book => book._id === args._id)
     },
     books: {
       type: new GraphQLList(BookType),
@@ -84,25 +84,33 @@ export const RootMutationType = new GraphQLObjectType({
       type: BookType,
       description: 'Add a book',
       args: {
+        _id: { type: GraphQLNonNull(GraphQLInt) },
         name: { type: GraphQLNonNull(GraphQLString) },
         authorId: { type: GraphQLNonNull(GraphQLInt) }
       },
       resolve: (parent, args) => {
-        const book = { id: books.length + 1, name: args.name, authorId: args.authorId }
-        books.push(book)
-        return book
+       
+        const newBook= new books({
+          _id: args._id,
+          name: args.name,
+          authorId: args.authorId 
+
+        })
+        return newBook.save();
       }
     },
+
     addAuthor: {
       type: AuthorType,
-      description: 'Add an author',
+      description: 'Agregando un autor',
       args: {
+        _id: { type: GraphQLNonNull(GraphQLInt) },
         name: { type: GraphQLNonNull(GraphQLString) }
       },
       resolve: (parent, args) => {
         const newAuthor= new authors({
-          _id: 5,
-          name: args.name,
+          _id: args._id,
+          name: args.name
         })
 
         return newAuthor.save();
@@ -110,7 +118,3 @@ export const RootMutationType = new GraphQLObjectType({
     }
   })
 })
-
-
-//db.Authors.insert(author)
-//return author    Authors.save(author); //

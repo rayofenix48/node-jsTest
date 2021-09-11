@@ -24,7 +24,8 @@ query{
 }
 
 mutation{
-	addAuthor(name: "Autor1 "){
+	addAuthor(_id:5,
+    name: "Autor4 "){
     _id
     name
   }

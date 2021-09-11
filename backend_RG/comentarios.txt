@@ -1,0 +1,57 @@
+Se me complico el autoincremento para los id ya que cuando ponía el resolver no me reconocia los comandos
+de mongoDB se me ocurrio hacerlo con 
+id: books.length + 1
+
+***************************************Inserciones:********************************
+mutation{
+	addAuthor(_id:1,
+    name: "J. K. Rowling"){
+    _id
+    name
+  }
+}
+
+mutation{
+	addAuthor(_id:2,
+    name: "J. R. R. Tolkien"){
+    _id
+    name
+  }
+}
+
+mutation{
+	addAuthor(_id:3,
+    name: "Brent Weeks"){
+    _id
+    name
+  }
+}
+
+******************Insertando en books*****************************
+
+mutation{
+	addBook(_id:1,
+    name: "Harry Potter and the Chamber of Secrets"
+    authorId: 1){
+    _id
+    name
+  }
+}
+
+mutation{
+	addBook(_id:2,
+    name: "Harry Potter and the Prisoner of Azkaban"
+    authorId: 1){
+    _id
+    name
+  }
+}
+
+mutation{
+	addBook(_id:3,
+    name: "Harry Potter and the Goblet of Fire"
+    authorId: 1){
+    _id
+    name
+  }
+}

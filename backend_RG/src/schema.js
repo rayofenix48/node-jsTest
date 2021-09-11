@@ -7,38 +7,6 @@ export const schema = new GraphQLSchema({
   mutation: RootMutationType
 })
 
-/*
-
-export const schema = new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: 'Query',
-    fields: () => ({
-      hello: {
-        type: GraphQLString,
-        resolve: () => 'Hello world!'
-      }
-    })
-  })
-});
-
-resolve(parent, args) {
-    const newGadget = new Gadget({
-      name: <a href="http://args.name" class="link link-url" target="_blank" rel="external nofollow noopener noreferrer">args.name</a>,
-      release_date: args.release_date,
-      by_company: args.by_company,
-      price: args.price,
-    })
-
-    return newGadget.save();
-  } */
-
-
-
-
-
-
-
-
 /* Documentación para realizar consultas y mutaciones
 
 query{
@@ -49,7 +17,7 @@ query{
 
 mutation{
 	addAuthor(name: "Autor1 "){
-    id
+    _id
     name
   }
 }

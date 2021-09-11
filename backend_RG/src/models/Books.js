@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const bookSchema = new mongoose.Schema({
-  id: {
+  _id: {
     type: Number,
     required: true,
   },
