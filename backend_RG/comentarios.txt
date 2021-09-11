@@ -1,7 +1,3 @@
-Se me complico el autoincremento para los id ya que cuando ponía el resolver no me reconocia los comandos
-de mongoDB se me ocurrio hacerlo con 
-id: books.length + 1
-
 ***************************************Inserciones:********************************
 mutation{
 	addAuthor(_id:1,
